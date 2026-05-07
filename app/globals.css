@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply min-h-screen bg-mesh text-ink antialiased;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,0.12), transparent 0 25%),
+    radial-gradient(circle at 80% 10%, rgba(116,192,252,0.14), transparent 0 22%),
+    radial-gradient(circle at 80% 80%, rgba(177,151,252,0.1), transparent 0 24%);
+}
+
+input,
+select,
+textarea {
+  @apply outline-none;
+}
+
+.video-shell {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.08));
+  box-shadow: 0 30px 80px rgba(0,0,0,0.28);
+}
+
+.video-shell::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), transparent 30%);
+}
